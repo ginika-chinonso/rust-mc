@@ -25,17 +25,21 @@ pub fn main() {
     };
 
     println!("A monkey is a mamal: {}", monkey.is_mamal);
-    
-    let mut cat = Animal::create_animal("Cat".to_string(), Some(4), "fur", "land".to_string(), true);
-    
+
+    let mut cat =
+        Animal::create_animal("Cat".to_string(), Some(4), "fur", "land".to_string(), true);
+
     println!("A cat has {} number of legs", cat.get_number_of_legs());
-    
+
     cat.update_num_of_legs(25);
-    
+
     println!("A cat has {} number of legs", cat.get_number_of_legs());
 
-    println!("A {} converted to {} ", dog.clone().skin, dog.convert_to_cat().specie);
-
+    println!(
+        "A {} converted to {} ",
+        dog.clone().skin,
+        dog.convert_to_cat().specie
+    );
 
     let is_equal = dog == cat;
 
@@ -55,23 +59,26 @@ pub struct Animal<'a> {
     is_mamal: bool,
 }
 
-pub trait  AnimalTrait {
+pub trait AnimalTrait {
     fn walk(&self) -> Animal;
     fn talk();
 }
-
 
 #[derive(Debug, Clone)]
 pub struct Dog;
 pub struct Cat;
 
-impl Cat {
-
-}
+impl Cat {}
 
 impl AnimalTrait for Dog {
     fn walk(&self) -> Animal {
-        Animal { specie: String::from("value"), no_of_legs: 4, skin:"brrr", habitat: String::from(""), is_mamal: true }
+        Animal {
+            specie: String::from("value"),
+            no_of_legs: 4,
+            skin: "brrr",
+            habitat: String::from(""),
+            is_mamal: true,
+        }
     }
 
     fn talk() {
@@ -89,10 +96,15 @@ impl AnimalTrait for Cat {
     }
 }
 
-impl <'a> Animal<'a> {
-    pub fn create_animal(specie: String, no_of_legs: Option<u8>, skin: &str, habitat: String, is_mamal: bool) -> Animal {
-        
-        let nol = match  no_of_legs {
+impl<'a> Animal<'a> {
+    pub fn create_animal(
+        specie: String,
+        no_of_legs: Option<u8>,
+        skin: &str,
+        habitat: String,
+        is_mamal: bool,
+    ) -> Animal {
+        let nol = match no_of_legs {
             Some(val) => val,
             None => 0,
         };
@@ -123,7 +135,6 @@ impl <'a> Animal<'a> {
     pub fn update_skin(&mut self, new_skin: &'a str) {
         self.skin = new_skin;
     }
-
 }
 
 #[derive(Debug, Clone, PartialEq)]

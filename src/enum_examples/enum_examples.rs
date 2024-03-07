@@ -12,9 +12,9 @@ pub fn main() {
     match &animal {
         Animal::Dog(val) => {
             println!("This is {}", val)
-        },
+        }
         Animal::Cat(_) => todo!(),
-        _ => println!("One on the many")
+        _ => println!("One on the many"),
     }
 
     println!("What is this? This is {}", animal);
@@ -24,13 +24,11 @@ pub fn main() {
     if let Animal::Cat(name) = animal2 {
         println!("This is {}", name);
     }
-    
-
 }
 
 #[derive(Debug)]
 struct Dog {
-    breed: DogBreed
+    breed: DogBreed,
 }
 
 #[derive(Debug)]
@@ -58,23 +56,20 @@ impl Display for Dog {
     }
 }
 
-
 #[derive(Debug)]
 enum Animal {
     Dog(String),
     Cat(String),
     Fish(String),
     Frog(String),
-    Goat(String)
+    Goat(String),
 }
 
 struct IpAddrV4 {
     addr: Option<u8>,
     addr1: u8,
-    dog: Dog
+    dog: Dog,
 }
-
-
 
 pub fn create_animal(animal_type: Animal) -> Option<Animal> {
     // if animal_type == String::from("Dog") {
@@ -96,8 +91,4 @@ pub fn create_animal(animal_type: Animal) -> Option<Animal> {
     }
 }
 
-
-
-pub mod testing_module_definition {
-
-}
+pub mod testing_module_definition {}

@@ -1,8 +1,9 @@
 pub mod ball;
+pub mod collections;
 pub mod data_types;
+pub mod enum_examples;
+pub mod error_handling;
 pub mod guess_game;
 pub mod ownership;
 pub mod struct_examples;
 pub mod variables;
-pub mod enum_examples;
-pub mod collections;

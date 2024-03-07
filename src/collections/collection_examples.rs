@@ -1,4 +1,7 @@
-use std::{collections::{BTreeMap, HashMap}, hash::BuildHasher};
+use std::{
+    collections::{BTreeMap, HashMap},
+    hash::BuildHasher,
+};
 
 pub fn main() {
     // println!("Collection exxamples");
@@ -7,7 +10,6 @@ pub fn main() {
 
     // let mut vector = vec![5];
     // let vec2: Vec<&str> = Vec::new();
-
 
     // array.to_vec().pop();
     // vector.pop();
@@ -25,7 +27,7 @@ pub fn main() {
 
     // println!("The valiue of x is: {}", x);
 
-    let mut new_vec = vec![4, 5, 6, 2,1 ];
+    let mut new_vec = vec![4, 5, 6, 2, 1];
 
     // new_vec.reverse();
 
@@ -40,7 +42,7 @@ pub fn main() {
     //     println!("{}", new_vec[i]);
     // }
 
-    let mut sch = web3bridge{total_students: 9};
+    let mut sch = web3bridge { total_students: 9 };
 
     update_total_students_inplace(&mut sch, 11);
 
@@ -56,10 +58,7 @@ pub fn main() {
 
     println!("After mutate and consume: {:?}", n);
 
-
     let people: Vec<Gender> = vec![Gender::Male(6), Gender::Female(5)];
-
-
 
     let new_string = String::new();
 
@@ -71,10 +70,9 @@ pub fn main() {
 
     println!("Here is o: {o}");
 
-
     let hello = String::from("Здравствуйте");
 
-    let hello_str =  "Здравствуйте";
+    let hello_str = "Здравствуйте";
 
     println!("{} and {}", hello.len(), hello_str.len());
 
@@ -102,9 +100,6 @@ pub fn main() {
     // *m = 8;
 
     println!("Up Man U: {}", scores_map.get("Man U").unwrap());
-    
-
-
 }
 
 // struct Myhasher;
@@ -117,28 +112,25 @@ pub fn main() {
 //     }
 // }
 
-
-
-pub struct Place{
+pub struct Place {
     x: u64,
-    y: String
+    y: String,
 }
 
 pub struct Point {
     k: String,
-    h: f64
+    h: f64,
 }
 
 pub struct Air {
     h: Vec<Place>,
-    j: Vec<Point>
+    j: Vec<Point>,
 }
 
 pub enum Gender {
     Male(i32),
-    Female(u32)
+    Female(u32),
 }
-
 
 #[derive(Debug, Clone)]
 struct web3bridge {
@@ -149,7 +141,7 @@ pub fn update_total_students_inplace(school: &mut web3bridge, new_total: usize) 
     school.total_students = new_total;
 }
 
-pub fn update_total_students_and_consume(mut school: web3bridge,  new_total: usize) -> web3bridge {
+pub fn update_total_students_and_consume(mut school: web3bridge, new_total: usize) -> web3bridge {
     school.total_students = new_total;
     school
 }
